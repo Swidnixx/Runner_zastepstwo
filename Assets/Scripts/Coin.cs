@@ -11,18 +11,6 @@ public class Coin : MonoBehaviour
         player = GameObject.FindObjectOfType<PlayerController>().transform;
     }
 
-    private void Update()
-    {
-        bool atract = GameManager.Instance.magnetActive;
-        if(atract)
-        {
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                player.position,
-                Time.deltaTime * 5);
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

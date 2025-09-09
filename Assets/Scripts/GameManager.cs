@@ -45,22 +45,4 @@ public class GameManager : MonoBehaviour
         coins++;
         coinText.text = coins.ToString();
     }
-
-    public bool magnetActive;
-    float magnetRange = 5;
-    float magnetDuration = 5;
-    public void MagnetCollect()
-    {
-        if(magnetActive)
-        {
-            CancelInvoke(nameof(CancelMagnet));
-        }
-        magnetActive = true;
-        Invoke( nameof(CancelMagnet), magnetDuration);
-    }
-
-    void CancelMagnet()
-    {
-        magnetActive = false;
-    }
 }
