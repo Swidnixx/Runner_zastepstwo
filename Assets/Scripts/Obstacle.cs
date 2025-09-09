@@ -8,7 +8,8 @@ public class Obstacle : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            GameManager.Instance.GameOver();
+            if(!GameManager.Instance.Immortality.IsActive)
+                GameManager.Instance.GameOver();
         }
     }
 }

@@ -8,7 +8,21 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindObjectOfType<PlayerController>().transform;
+        player = FindObjectOfType<PlayerController>().transform;
+    }
+
+    private void Update()
+    {
+        if(GameManager.Instance.Magnet.IsActive)
+        {
+            float distance = Vector2.Distance(player.position, transform.position);
+            if( distance < GameManager.Instance.Magnet.Range)
+            {
+                transform.position = Vector2.MoveTowards(transform.position,
+                    player.position,
+                    GameManager.Instance.Magnet.Speed * Time.deltaTime);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

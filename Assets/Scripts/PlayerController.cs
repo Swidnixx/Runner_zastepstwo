@@ -39,6 +39,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Immortality"))
+        {
+            Destroy(other.gameObject);
+            GameManager.Instance.ImmortalityCollected();
+        }
+        if (other.CompareTag("Magnet"))
+        {
+            Destroy(other.gameObject);
+            GameManager.Instance.MagnetCollected();
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (boxCol == null) return;

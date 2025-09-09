@@ -22,6 +22,15 @@ public class GameManager : MonoBehaviour
     float score;
     int coins;
 
+    public ImmortalitySO Immortality;
+    public MagnetSO Magnet;
+
+    private void Start()
+    {
+        Immortality.IsActive = false;
+        Magnet.IsActive = false;
+    }
+
     private void Update()
     {
         score += worldSpeed * Time.deltaTime;
@@ -44,5 +53,35 @@ public class GameManager : MonoBehaviour
     {
         coins++;
         coinText.text = coins.ToString();
+    }
+
+    public void ImmortalityCollected()
+    {
+        if (Immortality.IsActive)
+            CancelInvoke(nameof(CancelImmortality));
+        else
+            worldSpeed += Immortality.SpeedBoost;
+        Immortality.IsActive = true;
+        Invoke(nameof(CancelImmortality), Immortality.Duration);
+    }
+
+    private void CancelImmortality()
+    {
+        Immortality.IsActive = false;
+        worldSpeed -= Immortality.SpeedBoost;
+    }
+
+    public void MagnetCollected()
+    {
+        if (Magnet.IsActive)
+            CancelInvoke(nameof(CancelMagnet));
+
+        Magnet.IsActive = true;
+        Invoke(nameof(CancelMagnet), Magnet.Duration);
+    }
+
+    private void CancelMagnet()
+    {
+        Magnet.IsActive = false;
     }
 }
