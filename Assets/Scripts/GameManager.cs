@@ -29,12 +29,16 @@ public class GameManager : MonoBehaviour
     {
         Immortality.IsActive = false;
         Magnet.IsActive = false;
+
+        coins = PlayerPrefs.GetInt("Coins");
+        coinText.text = coins.ToString();
     }
 
     private void Update()
     {
         score += worldSpeed * Time.deltaTime;
         scoreText.text = score.ToString("F0");
+
     }
 
     public void GameOver()
@@ -53,6 +57,8 @@ public class GameManager : MonoBehaviour
     {
         coins++;
         coinText.text = coins.ToString();
+
+        PlayerPrefs.SetInt("Coins", coins);
     }
 
     public void ImmortalityCollected()
