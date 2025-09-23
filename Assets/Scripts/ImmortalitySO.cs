@@ -6,4 +6,6 @@ using UnityEngine;
 public class ImmortalitySO : PowerupSO
 {
     public float SpeedBoost;
+
+    public ImmortalitySO nextLevelBattery;
 }

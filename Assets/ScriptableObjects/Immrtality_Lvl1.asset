@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe2f30fee7ed7740b4b336a159eac78, type: 3}
   m_Name: Immrtality_Lvl1
   m_EditorClassIdentifier: 
+  level: 1
+  upgradePrice: 2
   IsActive: 0
   Duration: 3
   SpeedBoost: 5
+  nextLevelBattery: {fileID: 11400000, guid: 313b07d1291fcbe47a665569a417aed8, type: 2}
