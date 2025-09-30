@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe2f30fee7ed7740b4b336a159eac78, type: 3}
   m_Name: Immrtality_Lvl3
   m_EditorClassIdentifier: 
-  level: 1250
+  level: 3
   upgradePrice: 1
   IsActive: 0
   Duration: 7

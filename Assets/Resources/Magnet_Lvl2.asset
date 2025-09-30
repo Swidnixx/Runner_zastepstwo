@@ -18,4 +18,4 @@ MonoBehaviour:
   Duration: 8
   Range: 7
   Speed: 5
-  nextLevelMagnet: {fileID: 0}
+  nextLevelMagnet: {fileID: 11400000, guid: 42a15092e6e531444ab5e9dc90ab7f41, type: 2}

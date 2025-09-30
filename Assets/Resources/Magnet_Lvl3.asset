@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53b0807ee584754a8b97a15d4d8194d, type: 3}
   m_Name: Magnet_Lvl3
   m_EditorClassIdentifier: 
-  level: 2
+  level: 3
   upgradePrice: 2000
   IsActive: 0
   Duration: 8
