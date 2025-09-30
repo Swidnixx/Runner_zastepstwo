@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioClip jumpSfx;
+    public AudioClip batterySfx;
+    public AudioClip magnetSfx;
+
     public float jumpForce = 5;
     public LayerMask groundMask;
     Rigidbody2D rb;
@@ -29,12 +33,16 @@ public class PlayerController : MonoBehaviour
                 Vector2 force = new Vector2(0, jumpForce);
                 rb.velocity = force;
                 doubleJumped = false;
+
+                SoundManager.Instance.PlaySfx(jumpSfx);
             }
             else if( !doubleJumped )
             {
                 Vector2 force = new Vector2(0, jumpForce);
                 rb.velocity = force;
                 doubleJumped = true;
+
+                SoundManager.Instance.PlaySfx(jumpSfx);
             }
         }
     }
@@ -45,11 +53,13 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameManager.Instance.ImmortalityCollected();
+            SoundManager.Instance.PlaySfx(batterySfx);
         }
         if (other.CompareTag("Magnet"))
         {
             Destroy(other.gameObject);
             GameManager.Instance.MagnetCollected();
+            SoundManager.Instance.PlaySfx(magnetSfx);
         }
     }
 

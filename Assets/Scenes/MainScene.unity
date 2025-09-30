@@ -1400,6 +1400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f11733675086c43a0fd3027072dd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSfx: {fileID: 8300000, guid: d88badeaa753c5544b99b6bae2ace779, type: 3}
+  batterySfx: {fileID: 8300000, guid: 4d37caf4f3281d94d9e7c9aace1be6c4, type: 3}
+  magnetSfx: {fileID: 8300000, guid: 48630d30b778dd345a05bd59dc63ae04, type: 3}
   jumpForce: 19
   groundMask:
     serializedVersion: 2
