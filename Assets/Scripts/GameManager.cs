@@ -27,6 +27,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey("Battery"))
+            Immortality = Resources.Load<ImmortalitySO>(PlayerPrefs.GetString("Battery"));
+
+        if (PlayerPrefs.HasKey("Magnet"))
+            Magnet = Resources.Load<MagnetSO>(PlayerPrefs.GetString("Magnet"));
+
         Immortality.IsActive = false;
         Magnet.IsActive = false;
 

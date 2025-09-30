@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fe2f30fee7ed7740b4b336a159eac78, type: 3}
-  m_Name: Immrtality_Lvl2
+  m_Script: {fileID: 11500000, guid: f53b0807ee584754a8b97a15d4d8194d, type: 3}
+  m_Name: Magnet_Lvl2
   m_EditorClassIdentifier: 
   level: 2
-  upgradePrice: 1
+  upgradePrice: 100
   IsActive: 0
-  Duration: 7
-  SpeedBoost: 10
-  nextLevelBattery: {fileID: 0}
+  Duration: 8
+  Range: 7
+  Speed: 5
+  nextLevelMagnet: {fileID: 0}
